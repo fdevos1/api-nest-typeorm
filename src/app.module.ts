@@ -3,7 +3,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AppController } from './app.controller';
-import { IdeaModule } from './idea/idea.module';
+import { IdeaModule } from 'idea/idea.module';
 
 @Module({
   imports: [
@@ -14,7 +14,7 @@ import { IdeaModule } from './idea/idea.module';
       username: 'postgres',
       password: '1234',
       database: 'ideas',
-      entities: ['dist / ** / *. entity {.ts, .js}'],
+      entities: ['dist/**/*.entity{.ts, .js}', 'src/**/*.entity{.ts, .js}'],
       synchronize: true,
       logging: true,
     }),
